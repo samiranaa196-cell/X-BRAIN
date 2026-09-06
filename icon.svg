@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 512 512"
+     width="512"
+     height="512">
+
+  <defs>
+
+    <!-- Dark X gradient -->
+    <linearGradient id="xGradient"
+                    x1="0%" y1="0%"
+                    x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070b"/>
+      <stop offset="45%" stop-color="#182131"/>
+      <stop offset="75%" stop-color="#05070b"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+
+    <!-- Blue glow -->
+    <linearGradient id="blueGradient"
+                    x1="0%" y1="0%"
+                    x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00eaff"/>
+      <stop offset="50%" stop-color="#1683ff"/>
+      <stop offset="100%" stop-color="#0055ff"/>
+    </linearGradient>
+
+    <!-- Soft glow -->
+    <filter id="glow"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%">
+      <feGaussianBlur stdDeviation="7"
+                      result="blur"/>
+
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Shadow -->
+    <filter id="shadow"
+            x="-30%"
+            y="-30%"
+            width="160%"
+            height="160%">
+      <feDropShadow
+        dx="0"
+        dy="8"
+        stdDeviation="9"
+        flood-opacity="0.22"/>
+    </filter>
+
+  </defs>
+
+
+  <!-- WHITE BACKGROUND -->
+
+  <rect
+    x="10"
+    y="10"
+    width="492"
+    height="492"
+    rx="100"
+    fill="#ffffff"/>
+
+
+  <!-- MAIN X -->
+
+  <g filter="url(#shadow)">
+
+    <!-- Top-left -->
+    <path
+      d="M105 95
+         L205 95
+         L256 185
+         L218 235
+         Z"
+      fill="url(#xGradient)"
+      stroke="#172033"
+      stroke-width="3"/>
+
+    <!-- Top-right -->
+    <path
+      d="M407 95
+         L307 95
+         L256 185
+         L294 235
+         Z"
+      fill="url(#xGradient)"
+      stroke="#172033"
+      stroke-width="3"/>
+
+    <!-- Bottom-left -->
+    <path
+      d="M105 417
+         L205 417
+         L256 327
+         L218 277
+         Z"
+      fill="url(#xGradient)"
+      stroke="#172033"
+      stroke-width="3"/>
+
+    <!-- Bottom-right -->
+    <path
+      d="M407 417
+         L307 417
+         L256 327
+         L294 277
+         Z"
+      fill="url(#xGradient)"
+      stroke="#172033"
+      stroke-width="3"/>
+
+  </g>
+
+
+  <!-- BLUE EDGE LIGHTS -->
+
+  <path
+    d="M112 105 L202 105 L250 188"
+    fill="none"
+    stroke="url(#blueGradient)"
+    stroke-width="7"
+    filter="url(#glow)"/>
+
+  <path
+    d="M400 105 L310 105 L262 188"
+    fill="none"
+    stroke="url(#blueGradient)"
+    stroke-width="7"
+    filter="url(#glow)"/>
+
+  <path
+    d="M112 407 L202 407 L250 324"
+    fill="none"
+    stroke="url(#blueGradient)"
+    stroke-width="7"
+    filter="url(#glow)"/>
+
+  <path
+    d="M400 407 L310 407 L262 324"
+    fill="none"
+    stroke="url(#blueGradient)"
+    stroke-width="7"
+    filter="url(#glow)"/>
+
+
+  <!-- CENTRAL DIAMOND -->
+
+  <path
+    d="M256 180
+       L332 256
+       L256 332
+       L180 256
+       Z"
+    fill="#ffffff"
+    stroke="#1683ff"
+    stroke-width="5"
+    filter="url(#glow)"/>
+
+  <path
+    d="M256 202
+       L310 256
+       L256 310
+       L202 256
+       Z"
+    fill="url(#blueGradient)"
+    opacity="0.95"/>
+
+
+  <!-- CENTER STAR -->
+
+  <path
+    d="M256 214
+       L267 245
+       L298 256
+       L267 267
+       L256 298
+       L245 267
+       L214 256
+       L245 245
+       Z"
+    fill="#ffffff"
+    filter="url(#glow)"/>
+
+
+  <!-- ORBIT RING -->
+
+  <ellipse
+    cx="256"
+    cy="256"
+    rx="190"
+    ry="72"
+    fill="none"
+    stroke="url(#blueGradient)"
+    stroke-width="7"
+    transform="rotate(-24 256 256)"
+    filter="url(#glow)"/>
+
+
+  <!-- X-BRAIN TEXT -->
+
+  <text
+    x="256"
+    y="458"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="39"
+    font-weight="900"
+    letter-spacing="2">
+
+    <tspan fill="#1683ff">X</tspan>
+    <tspan fill="#111827">-BRAIN</tspan>
+
+  </text>
+
+</svg>
