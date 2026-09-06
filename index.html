@@ -2,112 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="X-BRAIN — Your friendly AI assistant">
+
+  <meta name="description"
+        content="X-BRAIN — Your friendly AI assistant">
+
   <link rel="manifest" href="/manifest.json">
-  <title>X-BRAIN AI</title>
+
+  <link rel="icon"
+        href="/icon.svg"
+        type="image/svg+xml">
+
   <link rel="stylesheet" href="/style.css">
+
+  <title>X-BRAIN AI Assistant</title>
 </head>
 
 <body>
 
-  <div class="app">
+  <div id="app">
 
-    <header class="topbar">
+    <header class="app-header">
       <div class="brand">
-        <div class="logo">X</div>
+        <img src="/icon.svg"
+             alt="X-BRAIN"
+             class="app-icon">
 
-        <div>
+        <div class="brand-text">
           <h1>X-BRAIN</h1>
-          <span><i></i> AI Assistant</span>
+          <p>AI Assistant</p>
         </div>
       </div>
-
-      <button class="menu-btn" id="clearBtn" title="New chat">
-        +
-      </button>
     </header>
 
+    <main class="chat-container">
 
-    <main class="chat" id="chat">
+      <div id="chatMessages" class="chat-messages">
 
-      <section class="welcome" id="welcome">
+        <div class="message ai-message">
+          <div class="message-icon">
+            <img src="/icon.svg" alt="AI">
+          </div>
 
-        <div class="hero-logo">
-          <span>X</span>
+          <div class="message-content">
+            <strong>X-BRAIN</strong>
+            <p>
+              Hello! 👋 I'm X-BRAIN, your friendly AI assistant.
+            </p>
+          </div>
         </div>
 
-        <h2>Hello 👋</h2>
-
-        <h3>I'm <strong>X-BRAIN</strong></h3>
-
-        <p>
-          Your friendly AI assistant.<br>
-          Ask me anything and let's get started.
-        </p>
-
-        <div class="suggestions">
-
-          <button data-prompt="Explain something to me in a simple way">
-            <b>🧠 Explain</b>
-            <small>Make something easy to understand</small>
-          </button>
-
-          <button data-prompt="Help me create a website">
-            <b>💻 Coding</b>
-            <small>Build websites and apps</small>
-          </button>
-
-          <button data-prompt="Give me a creative idea">
-            <b>💡 Ideas</b>
-            <small>Creative ideas and solutions</small>
-          </button>
-
-          <button data-prompt="Help me write something">
-            <b>✍️ Write</b>
-            <small>Messages, posts and more</small>
-          </button>
-
-        </div>
-
-      </section>
+      </div>
 
     </main>
 
+    <div class="input-area">
 
-    <div class="composer-wrap">
+      <div class="input-box">
 
-      <div class="composer">
-
-        <button class="attach" id="attachBtn" title="Coming soon">
-          +
-        </button>
-
-        <input
-          id="messageInput"
-          type="text"
-          placeholder="Message X-BRAIN..."
+        <textarea
+          id="userInput"
+          placeholder="Ask X-BRAIN anything..."
+          rows="1"
           autocomplete="off"
-          maxlength="4000"
-        >
+        ></textarea>
 
-        <button class="send" id="sendBtn" aria-label="Send">
-          ↑
+        <button id="sendButton" type="button">
+          ➤
         </button>
 
       </div>
-
-      <p class="notice">
-        X-BRAIN can make mistakes. Check important information.
-      </p>
 
     </div>
 
   </div>
 
-
   <script src="/app.js"></script>
+  <script src="/offline.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js")
+          .then(() => {
+            console.log("X-BRAIN Service Worker registered");
+          })
+          .catch((error) => {
+            console.log("Service Worker error:", error);
+          });
+      });
+    }
+  </script>
 
 </body>
 </html>
