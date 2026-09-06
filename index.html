@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="X-BRAIN — Your friendly AI assistant">
+  <link rel="manifest" href="/manifest.json">
+  <title>X-BRAIN AI</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">X</div>
+
+        <div>
+          <h1>X-BRAIN</h1>
+          <span><i></i> AI Assistant</span>
+        </div>
+      </div>
+
+      <button class="menu-btn" id="clearBtn" title="New chat">
+        +
+      </button>
+    </header>
+
+
+    <main class="chat" id="chat">
+
+      <section class="welcome" id="welcome">
+
+        <div class="hero-logo">
+          <span>X</span>
+        </div>
+
+        <h2>Hello 👋</h2>
+
+        <h3>I'm <strong>X-BRAIN</strong></h3>
+
+        <p>
+          Your friendly AI assistant.<br>
+          Ask me anything and let's get started.
+        </p>
+
+        <div class="suggestions">
+
+          <button data-prompt="Explain something to me in a simple way">
+            <b>🧠 Explain</b>
+            <small>Make something easy to understand</small>
+          </button>
+
+          <button data-prompt="Help me create a website">
+            <b>💻 Coding</b>
+            <small>Build websites and apps</small>
+          </button>
+
+          <button data-prompt="Give me a creative idea">
+            <b>💡 Ideas</b>
+            <small>Creative ideas and solutions</small>
+          </button>
+
+          <button data-prompt="Help me write something">
+            <b>✍️ Write</b>
+            <small>Messages, posts and more</small>
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <div class="composer-wrap">
+
+      <div class="composer">
+
+        <button class="attach" id="attachBtn" title="Coming soon">
+          +
+        </button>
+
+        <input
+          id="messageInput"
+          type="text"
+          placeholder="Message X-BRAIN..."
+          autocomplete="off"
+          maxlength="4000"
+        >
+
+        <button class="send" id="sendBtn" aria-label="Send">
+          ↑
+        </button>
+
+      </div>
+
+      <p class="notice">
+        X-BRAIN can make mistakes. Check important information.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <script src="/app.js"></script>
+
+</body>
+</html>
